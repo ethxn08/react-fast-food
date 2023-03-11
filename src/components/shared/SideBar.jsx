@@ -8,9 +8,13 @@ import {
   RiSettings4Line,
   RiLogoutCircleRLine,
 } from "react-icons/ri";
-const SideBar = () => {
+const SideBar = ({ showMenu }) => {
   return (
-    <div className="bg-[#1F1D2B] fixed left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl">
+    <div
+      className={`bg-[#1F1D2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50 transition-all ${
+        showMenu ? "left-0" : "-left-full"
+      }`}
+    >
       <div>
         <ul className="pl-4">
           <li>
@@ -70,10 +74,10 @@ const SideBar = () => {
       </div>
       <div>
         <ul className="pl-4">
-          <li className="hover:bg-[#262837] p-4 rounded-tl-lg rounded-bl-lg group transition-colors">
+          <li className="bg-[#1F1D2B] pt-4 rounded-tl-lg rounded-bl-lg group transition-colors">
             <a
               href="#"
-              className="group-hover:bg-[#ec7c6a] group-hover:text-white p-4 rounded-lg text-[#ec7c6a] flex justify-center transition-colors"
+              className="bg-[#1F1D2B] group-hover:text-white pt-5 rounded-lg text-[#ec7c6a] flex justify-center transition-colors"
             >
               <RiLogoutCircleRLine className="text-3xl" />
             </a>
